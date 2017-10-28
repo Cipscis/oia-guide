@@ -6,6 +6,7 @@
 	};
 
 	var classes = {
+		section: 'js-expander',
 		closed: 'is-closed'
 	};
 
@@ -16,27 +17,41 @@
 		},
 
 		_initEvents: function () {
-			$(document)
-				.on('click', selectors.trigger, Expander._triggerClickEvent);
+			var $triggers,
+				i;
+
+			$triggers = document.querySelectorAll(selectors.trigger);
+			for (i = 0; i < $triggers.length; i++) {
+				$triggers[i].addEventListener('click', Expander._triggerClickEvent);
+			}
 		},
 
 		_triggerClickEvent: function (e) {
 			e.preventDefault();
 
-			var $trigger = $(this),
-				$section = $trigger.closest(selectors.section);
+			var $section = e.target;
+
+			while (Array.prototype.indexOf.call($section.classList, classes.section) === -1) {
+				$section = $section.parentElement;
+			}
 
 			Expander._toggleSection($section);
 		},
 
 		_toggleSection: function ($section) {
-			$section.toggleClass(classes.closed);
+			$section.classList.toggle(classes.closed);
 		},
 
 		_closeByDefault: function () {
-			$(selectors.section).addClass(classes.closed);
+			var $sections,
+				i;
+
+			$sections = document.querySelectorAll(selectors.section);
+			for (i = 0; i < $sections.length; i++) {
+				$sections[i].classList.add(classes.closed);
+			}
 		}
 	};
 
-	$(document).ready(Expander.init);
+	document.addEventListener('DOMContentLoaded', Expander.init);
 })();
