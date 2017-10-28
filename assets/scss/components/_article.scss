@@ -1,0 +1,13 @@
+.article-meta {
+	@include cf;
+	color: $grey;
+	font-size: 0.75em;
+}
+
+.article-meta__author {
+	float: left;
+}
+
+.article-meta__date {
+	float: right;
+}

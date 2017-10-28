@@ -1,0 +1,192 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
+html, body {
+  padding: 0;
+  margin: 0; }
+
+* {
+  box-sizing: border-box; }
+
+ul, ol {
+  margin: 0; }
+
+img {
+  display: block;
+  max-width: 100%; }
+
+form {
+  margin: 0; }
+
+p:last-child {
+  margin-bottom: 0; }
+
+html {
+  font-family: "Roboto Slab", "Times New Roman", Times, serif;
+  line-height: 1.5;
+  font-size: 18px;
+  color: #333; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", Arial, sans-serif; }
+
+p,
+.p {
+  display: block;
+  margin: 18px 0; }
+  p:first-child,
+  .p:first-child {
+    margin-top: 0; }
+  p:last-child,
+  .p:last-child {
+    margin-bottom: 0; }
+
+.content a,
+.a {
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+  background: linear-gradient(to top, #aad5ff 0%, #aad5ff 20%, transparent 20.1%, transparent 100%); }
+  .content a:hover,
+  .a:hover {
+    background: linear-gradient(to top, #77bbff 0%, #77bbff 20%, transparent 20.1%, transparent 100%); }
+
+.content blockquote,
+.blockquote {
+  display: block;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0 30px; }
+  .content blockquote:before,
+  .blockquote:before {
+    content: "“";
+    font-size: 60px;
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .content blockquote cite:before,
+  .blockquote cite:before {
+    content: "― "; }
+
+.content ul, .content ol {
+  padding-left: 20px; }
+  .content ul > li, .content ol > li {
+    margin: 18px 0; }
+
+.content hr {
+  margin: 36px 0;
+  border: none;
+  border-bottom: 1px solid #ccc; }
+
+.content h4 {
+  margin-bottom: 0; }
+  .content h4 + p,
+  .content h4 + .p {
+    margin-top: 0; }
+
+body {
+  padding: 60px 0 160px; }
+
+.layout {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 800px; }
+
+.layout--wide {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1400px; }
+
+.tooltip:focus {
+  outline: none; }
+
+.tooltip__trigger {
+  position: relative;
+  cursor: pointer;
+  background-color: #aaffd5; }
+  .tooltip__trigger:hover,
+  .tooltip:focus .tooltip__trigger {
+    background-color: #77ffbb; }
+    .tooltip__trigger:hover:before,
+    .tooltip:focus .tooltip__trigger:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -18px;
+      bottom: -18px; }
+
+.tooltip__body {
+  position: absolute;
+  z-index: 1;
+  padding: 10px;
+  margin: 10px 0;
+  background: #fff;
+  border: 1px solid #666;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  display: none; }
+  .tooltip__body:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -18px;
+    right: -18px;
+    top: -18px;
+    bottom: -18px; }
+  @media (max-width: 767px) {
+    .tooltip__body {
+      left: 10px;
+      right: 10px;
+      margin-top: 30px; } }
+  @media (min-width: 768px) {
+    .tooltip__body {
+      width: 400px;
+      transform: translate(10px, -20px); } }
+  .tooltip:focus .tooltip__body,
+  .tooltip:hover .tooltip__body, .tooltip__body:hover {
+    display: inline-block; }
+
+.expander__trigger {
+  cursor: pointer; }
+  .expander__trigger:before {
+    content: "-";
+    display: inline-block;
+    width: 30px; }
+  .expander.is-closed .expander__trigger:before {
+    content: "+"; }
+
+.expander__body {
+  display: block;
+  padding-bottom: 50px; }
+  .expander.is-closed .expander__body {
+    display: none; }
+
+.article-meta {
+  color: #666;
+  font-size: 0.75em; }
+  .article-meta:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.article-meta__author {
+  float: left; }
+
+.article-meta__date {
+  float: right; }
+
+.counter {
+  padding-left: 30px;
+  counter-reset: counter-items; }
+  .counter .counter__item:before {
+    counter-increment: counter-items;
+    content: counter(counter-items);
+    color: #999;
+    position: absolute;
+    transform: translateX(-100%);
+    margin-left: -10px; }
+  .counter .counter__increment {
+    counter-increment: counter-items; }

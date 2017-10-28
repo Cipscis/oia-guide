@@ -1,0 +1,22 @@
+.expander {}
+
+.expander__trigger {
+	cursor: pointer;
+
+	&:before {
+		content: "-";
+		display: inline-block;
+		width: 30px;
+	}
+	.expander.is-closed &:before {
+		content: "+";
+	}
+}
+
+.expander__body {
+	display: block;
+	padding-bottom: 50px;
+	.expander.is-closed & {
+		display: none;
+	}
+}

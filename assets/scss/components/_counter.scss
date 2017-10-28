@@ -1,0 +1,21 @@
+.counter {
+	padding-left: 30px;
+
+	counter-reset: counter-items;
+	.counter__item {
+		&:before {
+			counter-increment: counter-items;
+			content: counter(counter-items);
+
+			color: $grey--light;
+
+			position: absolute;
+			transform: translateX(-100%);
+			margin-left: -10px;
+		}
+	}
+
+	.counter__increment {
+		counter-increment: counter-items;
+	}
+}
