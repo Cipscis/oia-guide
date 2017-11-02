@@ -6,8 +6,7 @@
 	};
 
 	var classes = {
-		section: 'js-expander',
-		closed: 'is-closed'
+		section: 'js-expander'
 	};
 
 	var Expander = {
@@ -55,9 +54,8 @@
 		},
 
 		_toggleSection: function ($section) {
-			var open = Array.prototype.indexOf.call($section.classList, classes.closed) === -1;
+			var open = $section.getAttribute('aria-expanded') !== 'false';
 
-			$section.classList.toggle(classes.closed);
 			if (open) {
 				// Close the expander
 				$section.setAttribute('aria-expanded', 'false');
@@ -73,7 +71,6 @@
 
 			$sections = document.querySelectorAll(selectors.section);
 			for (i = 0; i < $sections.length; i++) {
-				$sections[i].classList.add(classes.closed);
 				$sections[i].setAttribute('aria-expanded', 'false');
 			}
 		},

@@ -163,7 +163,7 @@ body {
     width: 30px;
     margin-right: 10px;
     border-radius: 50%; }
-  .expander.is-closed .expander__trigger:before {
+  .expander[aria-expanded="false"] .expander__trigger:before {
     content: "+"; }
   .expander__trigger:focus {
     outline: none; }
@@ -173,7 +173,7 @@ body {
 .expander__body {
   display: block;
   padding-bottom: 50px; }
-  .expander.is-closed .expander__body {
+  .expander[aria-expanded="false"] .expander__body {
     display: none; }
 
 .article-meta {

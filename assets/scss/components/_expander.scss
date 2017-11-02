@@ -12,7 +12,7 @@
 
 		border-radius: 50%;
 	}
-	.expander.is-closed &:before {
+	.expander[aria-expanded="false"] &:before {
 		content: "+";
 	}
 
@@ -27,7 +27,7 @@
 .expander__body {
 	display: block;
 	padding-bottom: 50px;
-	.expander.is-closed & {
+	.expander[aria-expanded="false"] & {
 		display: none;
 	}
 }
