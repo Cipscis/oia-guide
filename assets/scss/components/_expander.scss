@@ -6,10 +6,21 @@
 	&:before {
 		content: "-";
 		display: inline-block;
+		text-align: center;
 		width: 30px;
+		margin-right: 10px;
+
+		border-radius: 50%;
 	}
 	.expander.is-closed &:before {
 		content: "+";
+	}
+
+	&:focus {
+		outline: none;
+		&:before {
+			background: lighten($green--pale, 10%);
+		}
 	}
 }
 

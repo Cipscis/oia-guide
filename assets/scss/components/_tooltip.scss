@@ -11,7 +11,8 @@ $tooltip-wiggle-room: 18px;
 	cursor: pointer;
 	background-color: $green--pale;
 	&:hover,
-	.tooltip:focus & {
+	.tooltip:focus &,
+	.tooltip:focus-within & {
 		background-color: darken($green--pale, 10%);
 
 		&:before {
@@ -62,6 +63,7 @@ $tooltip-wiggle-room: 18px;
 	// pointer-events: none;
 	display: none;
 	.tooltip:focus &,
+	.tooltip:focus-within &,
 	.tooltip:hover &,
 	&:hover {
 		// visibility: visible;

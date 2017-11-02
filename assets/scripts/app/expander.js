@@ -13,7 +13,10 @@
 	var Expander = {
 		init: function () {
 			Expander._initEvents();
+
+			// If no JS, expanders will be open and non-interactable
 			Expander._closeByDefault();
+			Expander._addTabIndex();
 		},
 
 		_initEvents: function () {
@@ -24,6 +27,8 @@
 			for (i = 0; i < $triggers.length; i++) {
 				$triggers[i].addEventListener('click', Expander._triggerClickEvent);
 			}
+
+			document.addEventListener('keypress', Expander._triggerKeyPressEvent);
 		},
 
 		_triggerClickEvent: function (e) {
@@ -38,6 +43,17 @@
 			Expander._toggleSection($section);
 		},
 
+		_triggerKeyPressEvent: function (e) {
+			var key = e.keyCode || e.which,
+				target = e.target;
+
+			if (key === 13) {
+				// Enter pressed
+				// Simulate click event
+				Expander._triggerClickEvent(e);
+			}
+		},
+
 		_toggleSection: function ($section) {
 			$section.classList.toggle(classes.closed);
 		},
@@ -49,6 +65,16 @@
 			$sections = document.querySelectorAll(selectors.section);
 			for (i = 0; i < $sections.length; i++) {
 				$sections[i].classList.add(classes.closed);
+			}
+		},
+
+		_addTabIndex: function () {
+			var $triggers,
+				i;
+
+			$triggers = document.querySelectorAll(selectors.trigger);
+			for (i = 0; i < $triggers.length; i++) {
+				$triggers[i].setAttribute('tabindex', 0);
 			}
 		}
 	};

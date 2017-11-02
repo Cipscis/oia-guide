@@ -47,8 +47,10 @@ p,
   color: #333;
   text-decoration: none;
   background: linear-gradient(to top, #aad5ff 0%, #aad5ff 20%, transparent 20.1%, transparent 100%); }
-  .content a:hover,
-  .a:hover {
+  .content a:hover, .content a:focus,
+  .a:hover,
+  .a:focus {
+    outline: none;
     background: linear-gradient(to top, #77bbff 0%, #77bbff 20%, transparent 20.1%, transparent 100%); }
 
 .content blockquote,
@@ -107,10 +109,12 @@ body {
   cursor: pointer;
   background-color: #aaffd5; }
   .tooltip__trigger:hover,
-  .tooltip:focus .tooltip__trigger {
+  .tooltip:focus .tooltip__trigger,
+  .tooltip:focus-within .tooltip__trigger {
     background-color: #77ffbb; }
     .tooltip__trigger:hover:before,
-    .tooltip:focus .tooltip__trigger:before {
+    .tooltip:focus .tooltip__trigger:before,
+    .tooltip:focus-within .tooltip__trigger:before {
       content: "";
       position: absolute;
       left: 0;
@@ -146,6 +150,7 @@ body {
       width: 400px;
       transform: translate(10px, -20px); } }
   .tooltip:focus .tooltip__body,
+  .tooltip:focus-within .tooltip__body,
   .tooltip:hover .tooltip__body, .tooltip__body:hover {
     display: inline-block; }
 
@@ -154,9 +159,16 @@ body {
   .expander__trigger:before {
     content: "-";
     display: inline-block;
-    width: 30px; }
+    text-align: center;
+    width: 30px;
+    margin-right: 10px;
+    border-radius: 50%; }
   .expander.is-closed .expander__trigger:before {
     content: "+"; }
+  .expander__trigger:focus {
+    outline: none; }
+    .expander__trigger:focus:before {
+      background: #ddffee; }
 
 .expander__body {
   display: block;
