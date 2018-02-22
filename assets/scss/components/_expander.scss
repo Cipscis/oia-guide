@@ -31,3 +31,13 @@
 		display: none;
 	}
 }
+
+@media print {
+	.expander__trigger:before {
+		display: none;
+	}
+
+	.expander__body {
+		display: block !important;
+	}
+}

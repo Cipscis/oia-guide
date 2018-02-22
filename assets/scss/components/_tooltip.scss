@@ -59,15 +59,26 @@ $tooltip-wiggle-room: 18px;
 	border-radius: 5px;
 	box-shadow: 0 0 5px 0 rgba($black, 0.2);
 
-	// visibility: hidden;
-	// pointer-events: none;
 	display: none;
 	.tooltip:focus &,
 	.tooltip:focus-within &,
 	.tooltip:hover &,
 	&:hover {
-		// visibility: visible;
-		// pointer-events: auto;
 		display: inline-block;
+	}
+}
+
+@media print {
+	.tooltip__body {
+		position: static;
+		display: block !important;
+		width: auto;
+
+		margin-top: 25px;
+
+		&:before,
+		&:after {
+			display: none;
+		}
 	}
 }

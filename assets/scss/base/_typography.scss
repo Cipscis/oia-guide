@@ -88,3 +88,14 @@ p,
 		}
 	}
 }
+
+@media print {
+	a[href^="http"],
+	a[href^="mailto"],
+	a[href^="tel"] {
+		&:after {
+			content: " [" attr(href) "]";
+			overflow-wrap: break-word;
+		}
+	}
+}
