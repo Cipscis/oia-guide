@@ -25,19 +25,18 @@ p,
 	}
 }
 
+$link-bg-height: 5px;
 .content a,
 .a {
 	cursor: pointer;
 	color: $grey--dark;
 	text-decoration: none;
 
-	$link-bg-height: 20%;
-
-	background: linear-gradient(to top, $blue--pale 0%, $blue--pale $link-bg-height, transparent ($link-bg-height + 0.1%), transparent 100%);
+	background: linear-gradient(to top, $blue--pale 0%, $blue--pale $link-bg-height, transparent ($link-bg-height + 0.1px), transparent 100%);
 	&:hover,
 	&:focus {
 		outline: none;
-		background: linear-gradient(to top, darken($blue--pale, 10%) 0%, darken($blue--pale, 10%) $link-bg-height, transparent ($link-bg-height + 0.1%), transparent 100%);
+		background: linear-gradient(to top, darken($blue--pale, 10%) 0%, darken($blue--pale, 10%) $link-bg-height, transparent ($link-bg-height + 0.1px), transparent 100%);
 	}
 }
 
@@ -90,6 +89,12 @@ p,
 }
 
 @media print {
+	.content a,
+	.a {
+		background: none;
+		border-bottom: $link-bg-height solid $blue--pale;
+	}
+	
 	a[href^="http"],
 	a[href^="mailto"],
 	a[href^="tel"] {
