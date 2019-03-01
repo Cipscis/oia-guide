@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $heading-font-family;
 }
 
-p,
+.content p,
 .p {
 	display: block;
 	margin: 18px 0;
@@ -94,7 +94,7 @@ $link-bg-height: 5px;
 		background: none;
 		border-bottom: $link-bg-height solid $blue--pale;
 	}
-	
+
 	a[href^="http"],
 	a[href^="mailto"],
 	a[href^="tel"] {
