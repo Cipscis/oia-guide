@@ -10,21 +10,30 @@ $tooltip-wiggle-room: 18px;
 	position: relative;
 	cursor: pointer;
 	background-color: $green--pale;
-	&:hover,
-	.tooltip:focus &,
-	.tooltip:focus-within & {
-		background-color: darken($green--pale, 10%);
+}
 
-		&:before {
-			content: "";
-			position: absolute;
+@mixin tooltip-trigger {
+	background-color: darken($green--pale, 10%);
 
-			left: 0;
-			right: 0;
-			top: -($tooltip-wiggle-room);
-			bottom: -($tooltip-wiggle-room);
-		}
+	&:before {
+		content: "";
+		position: absolute;
+
+		left: 0;
+		right: 0;
+		top: -($tooltip-wiggle-room);
+		bottom: -($tooltip-wiggle-room);
 	}
+}
+
+// Separate out :focus-within so browsers that don't recognise
+// the pseudoclass won't also ignore the :hover and :focus rules
+.tooltip__trigger:hover,
+.tooltip:focus .tooltip__trigger {
+	@include tooltip-trigger;
+}
+.tooltip:focus-within .tooltip__trigger {
+	@include tooltip-trigger;
 }
 
 .tooltip__body {
@@ -60,12 +69,14 @@ $tooltip-wiggle-room: 18px;
 	box-shadow: 0 0 5px 0 rgba($black, 0.2);
 
 	display: none;
-	.tooltip:focus &,
-	.tooltip:focus-within &,
-	.tooltip:hover &,
-	&:hover {
-		display: inline-block;
-	}
+}
+.tooltip__body:hover,
+.tooltip:focus .tooltip__body,
+.tooltip:hover .tooltip__body {
+	display: inline-block;
+}
+.tooltip:focus-within .tooltip__body {
+	display: inline-block;
 }
 
 @media print {
