@@ -1,61 +1,53 @@
-(function () {
-	var selectors = {
+import activate from './activate.js';
+
+const expander = (function (activate) {
+	const selectors = {
 		section: '.js-expander',
 		trigger: '.js-expander-trigger',
 		body: '.js-expander-body'
 	};
 
-	var classes = {
+	const classes = {
 		section: 'js-expander'
 	};
 
-	var Expander = {
+	const module = {
 		init: function () {
-			Expander._initEvents();
+			module._initEvents();
 
 			// If no JS, expanders will be open and non-interactable
-			Expander._closeByDefault();
-			Expander._addTabIndex();
+			module._closeByDefault();
+			module._addTabIndex();
 
-			window.onload = Expander._openByHash;
+			window.addEventListener('load', module._openByHash);
 		},
 
 		_initEvents: function () {
-			var $triggers,
-				i;
+			var $triggers;
 
 			$triggers = document.querySelectorAll(selectors.trigger);
-			for (i = 0; i < $triggers.length; i++) {
-				$triggers[i].addEventListener('click', Expander._triggerClickEvent);
-			}
+			activate($triggers, module._activateTrigger);
 
-			document.addEventListener('keypress', Expander._triggerKeyPressEvent);
+			window.addEventListener('hashchange', module._openByHash);
 		},
 
-		_triggerClickEvent: function (e) {
+		_activateTrigger: function (e) {
+			var $section;
+
 			e.preventDefault();
 
-			var $section = e.target;
+			$section = e.target;
 
-			while (Array.prototype.indexOf.call($section.classList || [], classes.section) === -1) {
+			while ($section && ($section.classList.contains(classes.section) === false)) {
 				$section = $section.parentElement;
 			}
 
-			Expander._toggleSection($section);
-		},
-
-		_triggerKeyPressEvent: function (e) {
-			var key = e.keyCode || e.which,
-				target = e.target;
-
-			if (key === 13) {
-				// Enter pressed
-				// Simulate click event
-				Expander._triggerClickEvent(e);
-			}
+			module._toggleSection($section);
 		},
 
 		_toggleSection: function ($section, close) {
+			var $triggers = $section.querySelectorAll(selectors.trigger);
+
 			if (typeof close === 'undefined') {
 				close = $section.getAttribute('aria-expanded') === 'false';
 			}
@@ -63,29 +55,34 @@
 			if (close) {
 				// Open the expander
 				$section.setAttribute('aria-expanded', 'true');
+				$triggers.forEach(($trigger) => $trigger.setAttribute('aria-expander', 'true'));
 			} else {
 				// Close the expander
 				$section.setAttribute('aria-expanded', 'false');
+				$triggers.forEach(($trigger) => $trigger.setAttribute('aria-expander', 'false'));
 			}
 		},
 
 		_closeByDefault: function () {
-			var $sections,
-				i;
+			var $sections;
 
 			$sections = document.querySelectorAll(selectors.section);
-			for (i = 0; i < $sections.length; i++) {
-				$sections[i].setAttribute('aria-expanded', 'false');
-			}
+
+			$sections.forEach(($section) => {
+				$section.setAttribute('aria-expanded', 'false');
+
+				let $triggers = $section.querySelectorAll(selectors.trigger);
+				$triggers.forEach(($trigger) => $trigger.setAttribute('aria-expander', 'false'));
+			});
 		},
 
 		_openByHash: function () {
 			// If URL contains a hash to an element within a collapsed section,
 			// expand that section then scroll to the element
 
-			var hash = document.location.hash,
-				$hash,
-				$expander;
+			var hash = document.location.hash;
+			var $hash;
+			var $expander;
 
 			if (hash.length) {
 				$hash = document.querySelectorAll(hash);
@@ -95,36 +92,32 @@
 					$hash = $hash[0];
 					$expander = $hash;
 
-					while ($expander.parentElement && (Array.prototype.indexOf.call($expander.classList || [], classes.section) === -1)) {
+					while ($expander.parentElement && ($expander.classList.contains(classes.section) === false)) {
 						$expander = $expander.parentElement;
 					}
 
-					if (Array.prototype.indexOf.call($expander.classList || [], classes.section) !== -1) {
-						Expander._toggleSection($expander, true);
+					if ($expander.classList.contains(classes.section)) {
+						module._toggleSection($expander, true);
 					}
 
 					// Scroll to the given element
 					// Only works if asynchronous
-					window.setTimeout(
-						function () {
-							$hash.scrollIntoView();
-						},
-						0
-					);
+					window.setTimeout(() => $hash.scrollIntoView(), 0);
 				}
 			}
 		},
 
 		_addTabIndex: function () {
-			var $triggers,
-				i;
+			var $triggers;
 
 			$triggers = document.querySelectorAll(selectors.trigger);
-			for (i = 0; i < $triggers.length; i++) {
-				$triggers[i].setAttribute('tabindex', 0);
-			}
+			$triggers.forEach(($trigger) => $trigger.setAttribute('tabindex', '0'));
 		}
 	};
 
-	document.addEventListener('DOMContentLoaded', Expander.init);
-})();
+	return {
+		init: module.init
+	};
+})(activate);
+
+export default expander;

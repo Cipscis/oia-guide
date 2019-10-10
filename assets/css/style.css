@@ -30,14 +30,14 @@ html {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", Arial, sans-serif; }
 
-p,
+.content p,
 .p {
   display: block;
   margin: 18px 0; }
-  p:first-child,
+  .content p:first-child,
   .p:first-child {
     margin-top: 0; }
-  p:last-child,
+  .content p:last-child,
   .p:last-child {
     margin-bottom: 0; }
 
@@ -46,12 +46,12 @@ p,
   cursor: pointer;
   color: #333;
   text-decoration: none;
-  background: linear-gradient(to top, #aad5ff 0%, #aad5ff 20%, transparent 20.1%, transparent 100%); }
+  background: linear-gradient(to top, #aad5ff 0%, #aad5ff 5px, transparent 5.1px, transparent 100%); }
   .content a:hover, .content a:focus,
   .a:hover,
   .a:focus {
     outline: none;
-    background: linear-gradient(to top, #77bbff 0%, #77bbff 20%, transparent 20.1%, transparent 100%); }
+    background: linear-gradient(to top, #77bbff 0%, #77bbff 5px, transparent 5.1px, transparent 100%); }
 
 .content blockquote,
 .blockquote {
@@ -89,6 +89,10 @@ p,
     margin-top: 0; }
 
 @media print {
+  .content a,
+  .a {
+    background: none;
+    border-bottom: 5px solid #aad5ff; }
   a[href^="http"]:after,
   a[href^="mailto"]:after,
   a[href^="tel"]:after {
@@ -115,19 +119,28 @@ body {
   position: relative;
   cursor: pointer;
   background-color: #aaffd5; }
-  .tooltip__trigger:hover,
-  .tooltip:focus .tooltip__trigger,
-  .tooltip:focus-within .tooltip__trigger {
-    background-color: #77ffbb; }
-    .tooltip__trigger:hover:before,
-    .tooltip:focus .tooltip__trigger:before,
-    .tooltip:focus-within .tooltip__trigger:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: -18px;
-      bottom: -18px; }
+
+.tooltip__trigger:hover,
+.tooltip:focus .tooltip__trigger {
+  background-color: #77ffbb; }
+  .tooltip__trigger:hover:before,
+  .tooltip:focus .tooltip__trigger:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -18px;
+    bottom: -18px; }
+
+.tooltip:focus-within .tooltip__trigger {
+  background-color: #77ffbb; }
+  .tooltip:focus-within .tooltip__trigger:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -18px;
+    bottom: -18px; }
 
 .tooltip__body {
   position: absolute;
@@ -156,10 +169,23 @@ body {
     .tooltip__body {
       width: 400px;
       transform: translate(10px, -20px); } }
-  .tooltip:focus .tooltip__body,
-  .tooltip:focus-within .tooltip__body,
-  .tooltip:hover .tooltip__body, .tooltip__body:hover {
-    display: inline-block; }
+
+.tooltip__body:hover,
+.tooltip:focus .tooltip__body,
+.tooltip:hover .tooltip__body {
+  display: inline-block; }
+
+.tooltip:focus-within .tooltip__body {
+  display: inline-block; }
+
+.tooltip.tooltip--hidden .tooltip__body {
+  display: none; }
+
+.tooltip--block .tooltip__body {
+  transform: none;
+  left: 20px;
+  width: calc(100% - 40px);
+  margin-top: 44px; }
 
 @media print {
   .tooltip__body {
