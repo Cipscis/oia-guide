@@ -35,7 +35,6 @@ $link-bg-height: 5px;
 	background: linear-gradient(to top, $blue--pale 0%, $blue--pale $link-bg-height, transparent ($link-bg-height + 0.1px), transparent 100%);
 	&:hover,
 	&:focus {
-		outline: none;
 		background: linear-gradient(to top, darken($blue--pale, 10%) 0%, darken($blue--pale, 10%) $link-bg-height, transparent ($link-bg-height + 0.1px), transparent 100%);
 	}
 }

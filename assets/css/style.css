@@ -50,7 +50,6 @@ h1, h2, h3, h4, h5, h6 {
   .content a:hover, .content a:focus,
   .a:hover,
   .a:focus {
-    outline: none;
     background: linear-gradient(to top, #77bbff 0%, #77bbff 5px, transparent 5.1px, transparent 100%); }
 
 .content blockquote,
@@ -132,8 +131,21 @@ body {
     top: -18px;
     bottom: -18px; }
 
+.tooltip_focus .tooltip__trigger {
+  outline-color: #4d90fe;
+  outline-offset: -2px;
+  outline-style: solid;
+  outline-width: 2px; }
+  @supports (outline-style: auto) {
+    .tooltip_focus .tooltip__trigger {
+      outline-style: auto; } }
+
 .tooltip:focus-within .tooltip__trigger {
-  background-color: #77ffbb; }
+  background-color: #77ffbb;
+  outline-color: #4d90fe;
+  outline-offset: -2px;
+  outline-style: solid;
+  outline-width: 2px; }
   .tooltip:focus-within .tooltip__trigger:before {
     content: "";
     position: absolute;
@@ -141,6 +153,9 @@ body {
     right: 0;
     top: -18px;
     bottom: -18px; }
+  @supports (outline-style: auto) {
+    .tooltip:focus-within .tooltip__trigger {
+      outline-style: auto; } }
 
 .tooltip__body {
   position: absolute;
@@ -210,7 +225,14 @@ body {
   .expander__trigger:focus {
     outline: none; }
     .expander__trigger:focus:before {
+      outline-color: #4d90fe;
+      outline-offset: -2px;
+      outline-style: solid;
+      outline-width: 2px;
       background: #ddffee; }
+      @supports (outline-style: auto) {
+        .expander__trigger:focus:before {
+          outline-style: auto; } }
 
 .expander__body {
   display: block;

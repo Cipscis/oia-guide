@@ -32,8 +32,12 @@ $tooltip-wiggle-room: 18px;
 .tooltip:focus .tooltip__trigger {
 	@include tooltip-trigger;
 }
+.tooltip_focus .tooltip__trigger {
+	@include focus-outline;
+}
 .tooltip:focus-within .tooltip__trigger {
 	@include tooltip-trigger;
+	@include focus-outline;
 }
 
 .tooltip__body {

@@ -10,3 +10,16 @@ $green--pale: darken(#dfe, 10%);
 
 $base-font-family: "Roboto Slab", "Times New Roman", Times, serif;
 $heading-font-family: "Roboto", Arial, sans-serif;
+
+@mixin focus-outline($color: #4d90fe) {
+	// Replicate Chrome's default focus style
+	outline-color: $color;
+	outline-offset: -2px;
+
+	// IE11 and Edge don't support outline-style: auto
+	outline-style: solid;
+	outline-width: 2px;
+	@supports(outline-style: auto) {
+		outline-style: auto;
+	}
+}
