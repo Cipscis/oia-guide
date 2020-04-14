@@ -25,7 +25,7 @@
 			<div class="article-meta">
 				<span class="article-meta__author">by Mark Hanna</span>
 				<span class="article-meta__date">Published 2017-10-30</span>
-				<span class="article-meta__date">Updated 2019-03-26</span>
+				<span class="article-meta__date">Updated 2020-04-15</span>
 			</div>
 
 			<p>The <a href="http://www.legislation.govt.nz/act/public/1982/0156/latest/whole.html#DLM64785" target="_blank">Official Information Act</a> (OIA) is a very important law that gives you and me a lot of power. What it says, essentially, is simple:</p>
@@ -259,7 +259,7 @@
 									<span class="tooltip__body js-tooltip__body" id="tooltip-request-template-information-body">
 										<span class="p">When requesting data, you should also specify how the data should be broken down. For example, by month or financial year.</span>
 
-										<span class="p">If you can specify the information with language used by the agency, it will be easier for them to identify what you are looking for. Taking some time to research this while writing your complaint can save time in the long run, as it may mean they don't need to ask you for clarification.</span>
+										<span class="p">If you can specify the information with language used by the agency, it will be easier for them to identify what you are looking for. Taking some time to research this while writing your request can save time in the long run, as it may mean they don't need to ask you for clarification.</span>
 									</span>
 								</span>
 							</p>
@@ -286,11 +286,11 @@
 
 										<span class="p">If they don't provide the information in the format you requested, <a href="http://www.legislation.govt.nz/act/public/1982/0156/latest/whole.html#DLM65396" target="_blank">section 16(3)</a> says they have to tell you why they didn't.</span>
 
-										<span class="p">Agencies will typically release information in PDF form, which can't be searched for text without additional software that can read text out of images.</span>
+										<span class="p">Agencies will typically release information in PDF form. Depending on how these files have been created, them may not be able to be searched for text without additional software that can read text out of images.</span>
 
 										<span class="p">If you are requesting large amounts of information, especially if it's tabular data, make sure you specify that it should be released in a format that will be useful for you.</span>
 
-										<span class="p">I commonly ask that information be released in "a machine-readable spreadsheet format, such as CSV or XLSX".</span>
+										<span class="p">I commonly ask that tabular data be released in "a machine-readable spreadsheet format, such as CSV or XLSX".</span>
 
 										<span class="p">If you're not sure what specific file format you would find most useful, you can just specify that it should be released in "an accessible, searchable format".</span>
 									</span>
@@ -310,6 +310,8 @@
 										<span class="p">Obviously, if you're not a New Zealand citizen, you should adjust this sentence accordingly.</span>
 
 										<span class="p">If you do choose to assert your eligibility, I would recommend doing so as a New Zealand citizen or permanent resident, rather than by saying that you are in New Zealand. This is because saying you are in New Zealand may effectively prompt some agencies to ask for your address as proof of your eligibility.</span>
+
+										<span class="p">Requests made to local government bodies under the LGOIMA don't need to include this, because the LGOIMA does not include any eligibility requirements.</span>
 									</span>
 								</span>
 							</p>
@@ -325,7 +327,7 @@
 							<span class="tooltip js-tooltip" tabindex="0" role="dialog" aria-labelledby="tooltip-example-edited-trigger" aria-describedby="tooltip-example-edited-body">
 								<span class="tooltip__trigger" id="tooltip-example-edited-trigger">slightly edited</span>
 								<span class="tooltip__body js-tooltip__body" id="tooltip-example-edited-body">
-									<span class="p">I swapped the order of a few paragraphs and made some minor changes to the wording to better match the template given here, and fix a typo. You can find the original request on FYI:<br /><a href="https://fyi.org.nz/request/6675-strip-searches-in-new-zealand-prisons" target="_blank">Strip searches in New Zealand prisons</a></span>
+									<span class="p">I swapped the order of a few paragraphs and made some minor changes to the wording to better match the template given here, and fixed a typo. You can find the original request on FYI:<br /><a href="https://fyi.org.nz/request/6675-strip-searches-in-new-zealand-prisons" target="_blank">Strip searches in New Zealand prisons</a></span>
 								</span>
 							</span>
 							example of a request that I've sent:
@@ -383,7 +385,7 @@
 
 									<span class="p">Or you can create a bookmarklet (a bookmark that runs some JavaScript code instead of going to a website) in your browser. This will let you input a date (like "2017/09/03"), and be told when a response would be due for an OIA request received on that date (like "2017/09/29"). Remember that the due date might be different for a request made under the LGOIMA.</span>
 
-									<span class="p">To create this bookmarklet, bookmark this link, or you can click on it to try it out on this page: <a href="javascript:(function(){var dueDate,workingDays={getWorkingDaysBetween:function(startDate,endDate){var stepDate,days=0;for(startDate=new Date(startDate),endDate=new Date(endDate),startDate>endDate&&(stepDate=startDate,startDate=endDate,endDate=stepDate),startDate.setHours(0),startDate.setMinutes(0),startDate.setSeconds(0),endDate.setHours(0),endDate.setMinutes(0),endDate.setSeconds(0),stepDate=startDate;!workingDays.matchDate(stepDate,endDate);)stepDate.setDate(stepDate.getDate()+1),workingDays.isWorkingDay(stepDate)&&(days+=1);return days},addWorkingDays:function(fromDate,numWorkingDays){if(!(fromDate instanceof Date)||isNaN(fromDate.getTime()))return console.error(fromDate+' is not a date'),new Date;var toDate=new Date(fromDate);for(toDate.setDate(toDate.getDate()+numWorkingDays);workingDays.getWorkingDaysBetween(fromDate,toDate)<numWorkingDays;)toDate.setDate(toDate.getDate()+1);return toDate},matchDate:function(date1,date2){return date1.getFullYear()===date2.getFullYear()&&date1.getMonth()===date2.getMonth()&&date1.getDate()===date2.getDate()},isWorkingDay:function(date){var year,month,dateNum,weekDay=date.getDay(),holidays={2014:{1:[6],3:[18,21,25],5:[2],9:[27]},2015:{1:[6],3:[3,6,27],5:[1],9:[26]},2016:{1:[8],2:[25,28],3:[25],5:[6],9:[24]},2017:{1:[6],3:[14,17,25],5:[5],9:[23]},2018:{1:[6],2:[30],3:[2,25],5:[4],9:[22]},2019:{1:[6],3:[19,22,25],5:[3],9:[28]},2020:{1:[6],3:[10,13,27],5:[1],9:[26]}};return 6===weekDay||0===weekDay?!1:(month=date.getMonth(),dateNum=date.getDate(),0===month&&15>=dateNum||11===month&&dateNum>=25?!1:(year=date.getFullYear(),holidays[year][month]&&holidays[year][month].indexOf(dateNum)>-1?!1:!0))}},dateString=window.prompt('Request date (e.g. 2017/09/03):'),date=new Date(dateString);isNaN(date.getTime())&&(date=new Date),dueDate=workingDays.addWorkingDays(date,20),date=dueDate.getDate(),10>date&&(date='0'+date);var month=dueDate.getMonth()+1;10>month&&(month='0'+month),dueDateString=dueDate.getFullYear()+'/'+month+'/'+date,alert('20 working days due date: ' + dueDateString)})();">OIA due date</a></span>
+									<span class="p">To create this bookmarklet, bookmark this link, or you can click on it to try it out on this page: <a href="javascript:(function () { var workingDays = { getWorkingDaysBetween: function (startDate, endDate) { var stepDate, days = 0; startDate = new Date(startDate); endDate = new Date(endDate); if (startDate > endDate) { stepDate = startDate; startDate = endDate; endDate = stepDate; } startDate.setHours(0); startDate.setMinutes(0); startDate.setSeconds(0); endDate.setHours(0); endDate.setMinutes(0); endDate.setSeconds(0); stepDate = startDate; while (!workingDays.matchDate(stepDate, endDate)) { stepDate.setDate(stepDate.getDate() + 1); if (workingDays.isWorkingDay(stepDate)) { days += 1; } } return days; }, addWorkingDays: function (fromDate, numWorkingDays) { if (!(fromDate instanceof Date) || isNaN(fromDate.getTime())) { console.error(fromDate + ' is not a date'); return new Date(); } var toDate = new Date(fromDate); toDate.setDate(toDate.getDate() + numWorkingDays); while (workingDays.getWorkingDaysBetween(fromDate, toDate) < numWorkingDays) { toDate.setDate(toDate.getDate() + 1); } return toDate; }, matchDate: function (date1, date2) { return (date1.getFullYear() === date2.getFullYear()) && (date1.getMonth() === date2.getMonth()) && (date1.getDate() === date2.getDate()); }, isWorkingDay: function (date) { var weekDay = date.getDay(), year, month, dateNum; var holidays = { 2014: { 1: [6], 3: [18, 21, 25], 5: [2], 9: [27] }, 2015: { 1: [6], 3: [3, 6, 27], 5: [1], 9: [26] }, 2016: { 1: [8], 2: [25, 28], 3: [25], 5: [6], 9: [24] }, 2017: { 1: [6], 3: [14, 17, 25], 5: [5], 9: [23] }, 2018: { 1: [6], 2: [30], 3: [2, 25], 5: [4], 9: [22] }, 2019: { 1: [6], 3: [19, 22, 25], 5: [3], 9: [28] }, 2020: { 1: [6], 3: [10, 13, 27], 5: [1], 9: [26] }, 2021: { 1: [8], 3: [2, 5, 26], 5: [7], 9: [25] }, 2022: { 1: [7], 3: [15, 18, 25], 5: [6], 9: [24] }, 2023: { 1: [6], 3: [7, 10, 25], 5: [5], 9: [23] }, 2024: { 1: [6], 2: [29], 3: [1, 25], 5: [3], 9: [28] }, 2025: { 1: [6], 3: [18, 21, 25], 5: [2], 9: [27] }, 2026: { 1: [6], 3: [3, 6, 27], 5: [1], 9: [26] }, 2027: { 1: [8], 2: [26, 29], 3: [26], 5: [7], 9: [25] }, 2028: { 1: [7], 3: [14, 17, 25], 5: [5], 9: [23] }, 2029: { 1: [6], 2: [30], 3: [2, 25], 5: [4], 9: [22] }, 2030: { 1: [6], 3: [19, 22, 25], 5: [3], 9: [28] } }; if (weekDay === 6 || weekDay === 0) { return false; } else { month = date.getMonth(); dateNum = date.getDate(); if ((month === 0 && dateNum <= 15) || (month === 11 && dateNum >= 25)) { return false; } year = date.getFullYear(); if (holidays[year][month] && holidays[year][month].indexOf(dateNum) > -1) { return false; } return true; } } }; var datestring = window.prompt('Request date'), date = new Date(datestring); if (isNaN(date.getTime())) { date = new Date(); } var dueDate = workingDays.addWorkingDays(date, 20); date = dueDate.getDate(); if (date < 10) { date = '0' + date; } var month = dueDate.getMonth()+1; if (month < 10) { month = '0' + month; } datestring = dueDate.getFullYear() + '/' + month + '/' + date; alert(datestring); })();">OIA due date</a></span>
 								</span>
 							</span>
 							to respond.
@@ -394,7 +396,7 @@
 							<span class="tooltip js-tooltip" tabindex="0" role="dialog" aria-labelledby="tooltip-decision-meaning-trigger" aria-describedby="tooltip-decision-meaning-body">
 								<span class="tooltip__trigger" id="tooltip-decision-meaning-trigger">a decision on your request</span>
 								<span class="tooltip__body js-tooltip__body" id="tooltip-decision-meaning-body">
-									<span class="p">Making a decision on your request can mean anything from giving you the information you asked for, deciding to withhold all or some of it, or transferring you to a different agency. It can also mean deciding to extend the time limit.</span>
+									<span class="p">Making a decision on your request can mean anything from giving you the information you asked for, deciding to withhold all or some of it, or transferring you to a different agency.</span>
 								</span>
 							</span>
 							and tell you about it "as soon as reasonably practicable", and certainly no later than 20 working days after receiving the request.
@@ -404,7 +406,7 @@
 
 						<p>It is possible for agencies to extend the time limit past 20 working days. <a href="http://www.legislation.govt.nz/act/public/1982/0156/latest/whole.html#DLM65394" target="_blank">Section 15A</a> of the OIA says they can do this if it's necessary because the information you've asked for takes a long time to retrieve, or if they need to make consultations before they can respond and they can't do this within the standard time limit.</p>
 
-						<p>If an agency wants to extend this time limit, they have to tell you that before the standard 20 working days is up. They also have to tell you the reason why they're extending it. Unfortunately, this explanation typically comes in the vague form of saying it's necessary for them to be able to make the necessary consultations.</p>
+						<p>If an agency wants to extend this time limit, they have to tell you that before the initial 20 working days is up. They also have to tell you the reason why they're extending it. Unfortunately, this explanation typically comes in the vague form of saying it's necessary for them to be able to make the necessary consultations.</p>
 					</div>
 				</div>
 
@@ -418,7 +420,7 @@
 
 						<p>If it's straightforward, such as emailing your request to a different address, it may be easier to do as they've asked instead of fighting it. Regardless, you should inform them that <a href="http://www.legislation.govt.nz/act/public/1982/0156/latest/whole.html#DLM65382" target="_blank">section 12(1AA)(a)</a> of the OIA says requests <q>may be made in any form and communicated by any means</q>.</p>
 
-						<p>The 20 working days' deadline for them to reply to your request is set from when they originally received it. If it takes a week before you make your request again in the way they asked, that wouldn't change the deadline they have to abide by.</p>
+						<p>The 20 working days deadline for them to reply to your request is set from when they originally received it. If it takes a week before you make your request again in the way they asked, that wouldn't change the deadline they have to abide by.</p>
 					</div>
 				</div>
 
@@ -433,6 +435,18 @@
 						<p>You don't need to provide any information you don't want to, though an agency may refuse to fulfil your request if they can't establish eligibility. This isn't usually an issue with most agencies, but some (such as NZ Police) are more likely to ask for proof of eligibility.</p>
 
 						<p>The Office of the Ombudsman's guidance note on <a href="http://www.ombudsman.parliament.nz/system/paperclip/document_files/document_files/2469/original/online_requests.pdf?1516146949" target="_blank">requests made online</a> contains a section on page 4 on establishing eligibility under the OIA.</p>
+
+						<p>
+							If you are asking a local government body for information under the LGOIMA, they cannot ask you to provide proof of eligibility. Unlike the OIA, the LGOIMA
+							<span class="tooltip js-tooltip" tabindex="0" role="dialog" aria-labelledby="tooltip-lgoima-eligibility-trigger" aria-describedby="tooltip-lgoima-eligibility-body">
+								<span class="tooltip__trigger" id="tooltip-lgoima-eligibility-trigger">allows anyone to make requests</span>.
+								<span class="tooltip__body js-tooltip__body" id="tooltip-lgoima-eligibility-body">
+									<span class="p"><a href="http://www.legislation.govt.nz/act/public/1987/0174/latest/DLM122292.html" target="_blank">Section 10(1)</a> of the LGOIMA says:</span>
+
+									<span class="blockquote">Any person may request any local authority to make available to that person any specified official information.</span>
+								</span>
+							</span>
+						</p>
 					</div>
 				</div>
 
@@ -441,13 +455,13 @@
 
 					<div class="expander__body js-expander-body">
 						<p>
-							Asking for a very large amount of information is grounds for refusing a request, but agencies can instead
+							Asking for a very large amount of information is a permitted reason for refusing a request, but agencies can instead
 							<span class="tooltip js-tooltip" tabindex="0" role="dialog" aria-labelledby="tooltip-charging-guidelines-trigger" aria-describedby="tooltip-charging-guidelines-body">
 								<span class="tooltip__trigger" id="tooltip-charging-guidelines-trigger">propose a fee</span>
 								<span class="tooltip__body js-tooltip__body" id="tooltip-charging-guidelines-body">
-									<span class="p">There are fairly specific guidelines for charging for requests, that lay out what activities can and can't be charged for and how much agencies can charge for their time.</span>
+									<span class="p">There are fairly specific guidelines for charging for requests, which lay out what activities can and can't be charged for and how much agencies can charge for their time.</span>
 
-									<span class="p">If an agency is asking you to pay a fee for them to release certain information, you can ask them for a breakdown of the fee. They'll have to tell you how much time they've estimated for each chargeable activity</span>
+									<span class="p">If an agency is asking you to pay a fee for them to release certain information, you can ask them for a breakdown of the fee. They'll have to tell you how much time they've estimated for each chargeable activity.</span>
 
 									<span class="p">You can check this breakdown against the Ombudsman's guidance note on <a href="http://www.ombudsman.parliament.nz/system/paperclip/document_files/document_files/2227/original/charging_june_2017.pdf?1498813017" target="_blank">charging</a> to see if they are proposing to charge you for activities that can't be charged for.</span>
 								</span>
@@ -464,7 +478,7 @@
 							<span class="tooltip js-tooltip" tabindex="0" role="dialog" aria-labelledby="tooltip-cota-separation-trigger" aria-describedby="tooltip-cota-separation-body">
 								<span class="tooltip__trigger" id="tooltip-cota-separation-trigger">have a different person send each request</span>.
 								<span class="tooltip__body js-tooltip__body" id="tooltip-cota-separation-body">
-									<span class="p"><a href="https://fyi.org.nz/request/5084-cota-reports" target="_blank">A request</a> in late 2016 asked for all Crimes of Torture Act reports produced between 2007 and the end of 2016. <a href="https://fyi.org.nz/request/5084/response/17042/attach/9/Response%20C82913.pdf" target="_blank">In response</a>, the Department of Corrections said they would only release this information if they were paid $9,956.00 in advance.</span>
+									<span class="p"><a href="https://fyi.org.nz/request/5084-cota-reports" target="_blank">A request</a> in late 2016 asked the Department of Corrections for all Crimes of Torture Act reports produced between 2007 and the end of 2016. <a href="https://fyi.org.nz/request/5084/response/17042/attach/9/Response%20C82913.pdf" target="_blank">In response</a>, Corrections said it would only release this information if it was paid $9,956.00 in advance.</span>
 
 									<span class="p">Some months later, separate requests were made, each by a different person, for these reports on a per-year basis. For example, <a href="https://fyi.org.nz/request/6301-cota-reports-2009" target="_blank">this request</a> asked for all those reports produced in 2009.</span>
 
@@ -511,7 +525,7 @@
 						<h4 id="wrong-refused-18d">The information is, or will soon be, publicly available</h4>
 
 						<p>
-							Agencies can also refuse your request under <a href="http://www.legislation.govt.nz/act/public/1982/0156/latest/whole.html#DLM65600" target="_blank">section 18(d)</a> of the OIA if the information you've asked for is, or soon will be, publicly available. If it's already publicly available, the agency has to tell you
+							Agencies can also refuse your request under <a href="http://www.legislation.govt.nz/act/public/1982/0156/latest/whole.html#DLM65600" target="_blank">section 18(d)</a> of the OIA if the information you've asked for is, or soon will be, publicly available. If it's already publicly available, the agency should tell you
 							<span class="tooltip js-tooltip" tabindex="0" role="dialog" aria-labelledby="tooltip-18d-guidance-trigger" aria-describedby="tooltip-18d-guidance-body">
 								<span class="tooltip__trigger" id="tooltip-18d-guidance-trigger">where you can find it</span>.
 								<span class="tooltip__body js-tooltip__body" id="tooltip-18d-guidance-body">
@@ -522,7 +536,7 @@
 							</span>
 						</p>
 
-						<p>If it will be publicly available soon, the agency has to tell you when they expect it to be available, and they also have to contact you when it becomes available.</p>
+						<p>If it will be publicly available soon, the agency should tell you when they expect it to be available, and they also should contact you when it becomes available.</p>
 
 						<p>They should also consider releasing the information to you immediately if it would be easy for them to do, in addition to making it public.</p>
 
@@ -547,13 +561,13 @@
 					<h3 class="expander__trigger js-expander-trigger" id="wrong-withheld">Information has been withheld</h3>
 
 					<div class="expander__body js-expander-body">
-						<p>When you do get a response, you may find that some or all of the information you requested has been withheld. The agency has to tell you why each piece of information has been withheld, and different information may have been withheld under different grounds.</p>
+						<p>When you do get a response, you may find that some or all of the information you requested has been withheld. The agency has to tell you why each piece of information has been withheld, and different information may have been withheld for different reasons.</p>
 
 						<h4 id="wrong-withheld-why">Why was it withheld?</h4>
 
 						<p>When you get a response like this, especially if they've specified the section of the OIA the information was withheld under without much explanation of what that means, it's best to check the relevant section of the OIA yourself. For example, <a href="http://www.legislation.govt.nz/act/public/1982/0156/latest/whole.html#DLM65371" target="_blank">section 9(2)(a)</a> allows information to be withheld in order to protect privacy.</p>
 
-						<p>If you don't think the agency is justified in having withheld that information under those grounds, or if the relevant section of the OIA doesn't seem clear on its own, you should next have a look at the list of <a href="http://www.ombudsman.parliament.nz/resources-and-publications/guides/official-information-legislation-guides" target="_blank">guidance notes</a> produced by the Ombudsman. There's probably a note directly relevant to the section that's been cited in your case, and the guidance notes can help you understand if the decision was fully justified.</p>
+						<p>If you don't think the agency is justified in having withheld that information for that reason, or if the relevant section of the OIA doesn't seem clear on its own, you should next have a look at the list of <a href="http://www.ombudsman.parliament.nz/resources-and-publications/guides/official-information-legislation-guides" target="_blank">guidance notes</a> produced by the Ombudsman. There's probably a note directly relevant to the section that's been cited in your case, and the guidance notes can help you understand if the decision was fully justified.</p>
 
 						<h4 id="wrong-withheld-challenging">Challenging the decision</h4>
 
@@ -569,13 +583,13 @@
 
 						<p>It's also important to understand that <a href="http://www.legislation.govt.nz/act/public/1982/0156/latest/whole.html#DLM65371" target="_blank">section 9</a> only allows for information to be withheld if it's <em>necessary</em> for the given purpose, such as protecting privacy. If you believe it wasn't <em>necessary</em> for the agency to withhold that information, you can challenge the decision on those grounds.</p>
 
-						<p>For example, if they've withheld the author of a report but it's public knowledge who the report's author is, it was not <em>necessary</em> for them to withhold that information.</p>
+						<p>For example, if they've withheld the author of a report but it's public knowledge who the report's author is, it was not <em>necessary</em> for them to withhold that information to protect the author's privacy.</p>
 
 						<p>You should attach a zip file to your complaint, containing all the correspondence you've had with the agency about your request. Make sure you also include any attachments that the agency sent to you.</p>
 
-						<p>Complaints to the Ombudsman should be emailed to <a href="mailto:info@ombudsman.parliament.nz">info@ombudsman.parliament.nz</a>, or you can <a href="http://www.ombudsman.parliament.nz/make-a-complaint/make-a-complaint-now/make-a-complaint-online-now" target="_blank">fill out a form</a> on their website.</p>
+						<p>Complaints to the Ombudsman should be emailed to <a href="mailto:info@ombudsman.parliament.nz">info@ombudsman.parliament.nz</a>, or you can <a href="https://www.ombudsman.parliament.nz/get-help-public/make-complaint-members-public" target="_blank">fill out a form</a> on their website.</p>
 
-						<p>An Ombudsman complaint is a much slower process than an OIA request, so be prepared for it to take months to be resolved. In the meantime, you may want to think about what related information you might be able to request from the agency, or from a different agency.</p>
+						<p>Complaining to the Ombudsman is a much slower process than making an OIA request, so be prepared for it to take months to be resolved. In the meantime, you may want to think about what related information you might be able to request from the agency, or from a different agency.</p>
 					</div>
 				</div>
 
@@ -583,7 +597,7 @@
 					<h3 class="expander__trigger js-expander-trigger" id="wrong-no-response">I haven't received a response to my request</h3>
 
 					<div class="expander__body js-expander-body">
-						<p>If the 20 working days' deadline passes and you haven't received a response from the agency, your first step should be to make sure they did receive your request. In most cases, you should expect to have received an acknowledgement email saying that your request will be processed under the OIA.</p>
+						<p>If the 20 working days deadline passes and you haven't received a response from the agency, your first step should be to make sure they did receive your request. In most cases, you should expect to have received an acknowledgement email saying that your request will be processed under the OIA.</p>
 
 						<p>You can complain to the Ombudsman about overdue requests, but you should be aware that this is not typically likely to speed up the response. The likely outcome of a complaint about this is that the Ombudsman will tell the agency that their handling of your request was not acceptable.</p>
 
@@ -595,7 +609,7 @@
 							<p class="counter__item">I would like to lodge a formal complaint regarding an overdue response to a request for official information.</p>
 
 							<p class="counter__item">
-								The [AGENCY] received a request for official information from me on [DATE]. The final day of the
+								[AGENCY] received a request for official information from me on [DATE]. The final day of the
 								<span class="tooltip js-tooltip" tabindex="0" role="dialog" aria-labelledby="tooltip-complaint-template-extension-trigger" aria-describedby="tooltip-complaint-template-extension-body">
 									<span class="tooltip__trigger" id="tooltip-complaint-template-extension-trigger">20 working days</span>
 									<span class="tooltip__body js-tooltip__body" id="tooltip-complaint-template-extension-body">
@@ -619,20 +633,20 @@
 							</p>
 
 							<p class="counter__item">
-								[DATE] - The [AGENCY] received my request<br />
-								[DATE] - I received an acknowledgement of receipt of my request from the [AGENCY]
+								[DATE] - [AGENCY] received my request<br />
+								[DATE] - I received an acknowledgement of receipt of my request from [AGENCY]
 							</p>
 
 							<p class="counter__item">There has been no further correspondence to date.</p>
 
-							<p class="counter__item">I have attached a zip file containing all correspondence I have had with the [AGENCY] regarding this request. Please don't hesitate to contact me if any part of my complaint is unclear, or if you require any more information from me.</p>
+							<p class="counter__item">I have attached a zip file containing all correspondence I have had with [AGENCY] regarding this request. Please don't hesitate to contact me if any part of my complaint is unclear, or if you require any more information from me.</p>
 
 							<p class="counter__item">Ngā mihi,<br />[NAME]</p>
 						</div>
 
 						<p>You should attach a zip file containing all the correspondence you've had with the agency about your request. Make sure you also include any attachments that the agency sent to you.</p>
 
-						<p>Complaints to the Ombudsman should be emailed to <a href="mailto:info@ombudsman.parliament.nz">info@ombudsman.parliament.nz</a>, or you can <a href="http://www.ombudsman.parliament.nz/make-a-complaint/make-a-complaint-now/make-a-complaint-online-now" target="_blank">fill out a form</a> on their website.</p>
+						<p>Complaints to the Ombudsman should be emailed to <a href="mailto:info@ombudsman.parliament.nz">info@ombudsman.parliament.nz</a>, or you can <a href="https://www.ombudsman.parliament.nz/get-help-public/make-complaint-members-public" target="_blank">fill out a form</a> on their website.</p>
 					</div>
 				</div>
 			</div>
