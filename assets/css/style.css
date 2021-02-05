@@ -46,11 +46,11 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   color: #333;
   text-decoration: none;
-  background: linear-gradient(to top, #aad5ff 0%, #aad5ff 5px, transparent 5.1px, transparent 100%); }
+  background: linear-gradient(to top, #aad5ff 0%, #aad5ff 3px, transparent 3.1px, transparent 100%); }
   .content a:hover, .content a:focus,
   .a:hover,
   .a:focus {
-    background: linear-gradient(to top, #77bbff 0%, #77bbff 5px, transparent 5.1px, transparent 100%); }
+    background: linear-gradient(to top, #77bbff 0%, #77bbff 3px, transparent 3.1px, transparent 100%); }
 
 .content blockquote,
 .blockquote {
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
   .content a,
   .a {
     background: none;
-    border-bottom: 5px solid #aad5ff; }
+    border-bottom: 3px solid #aad5ff; }
   a[href^="http"]:after,
   a[href^="mailto"]:after,
   a[href^="tel"]:after {
